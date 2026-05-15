@@ -17,7 +17,7 @@ import (
 
 	"github.com/jackc/pgx/v5/pgxpool"
 
-	"htmx-go-pgsql-todo/internal/todo"
+	"htmx-go-pgsql-todo/apps/web/internal/todo"
 )
 
 //go:embed templates/*.html templates/partials/*.html public/*
@@ -78,9 +78,9 @@ func main() {
 	srv := &http.Server{
 		Addr:         cfg.Addr,
 		Handler:      logRequests(mux),
-		ReadTimeout:   10 * time.Second,
-		WriteTimeout:  10 * time.Second,
-		IdleTimeout:   60 * time.Second,
+		ReadTimeout:  10 * time.Second,
+		WriteTimeout: 10 * time.Second,
+		IdleTimeout:  60 * time.Second,
 	}
 
 	log.Printf("listening on http://%s", cfg.Addr)

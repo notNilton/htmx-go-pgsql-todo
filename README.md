@@ -5,6 +5,17 @@ A To Do example based on HTMX and Go backed by PostgreSQL.
 The app renders HTML on the server, uses HTMX for partial updates, and stores
 data in PostgreSQL.
 
+## Monorepo Layout
+
+```text
+.
+├── apps/
+│   └── web/        # Go app, templates, and static assets
+├── docker-compose.yml
+├── go.mod
+└── README.md
+```
+
 ## Requirements
 
 - Go 1.22+
@@ -30,7 +41,7 @@ ADDR=127.0.0.1:3456
 ## Run the app
 
 ```bash
-go run .
+go run ./apps/web
 ```
 
 Open `http://127.0.0.1:3456`.
