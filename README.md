@@ -11,10 +11,14 @@ data in PostgreSQL.
 .
 ├── apps/
 │   └── web/        # Go app, templates, and static assets
+├── database/       # SQL schema and seed data
 ├── docker-compose.yml
 ├── go.mod
 └── README.md
 ```
+
+HTMX is loaded in the browser shell from the public CDN and drives the partial
+updates for the todo list.
 
 ## Requirements
 
@@ -56,3 +60,6 @@ Open `http://127.0.0.1:3456`.
 
 The application creates the `todos` table automatically on startup and seeds a
 couple of sample items when the table is empty.
+
+The SQL equivalents live in [`database/schema.sql`](./database/schema.sql) and
+[`database/seed.sql`](./database/seed.sql).
